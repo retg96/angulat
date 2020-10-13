@@ -1,0 +1,34 @@
+<div class="row" *ngIf="!file; else main_content">
+    <h1>Loading...</h1>
+</div>
+<ng-template #main_content>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <img [src]="'http://localhost:4000/' + file.filePath" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <form class="card-body" (submit)="updateFile(title,nombre, description)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="File's Title" [value]="file.title" #title>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="File's Nombre" [value]="file.nombre" #nombre>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="2" class="form-control" placeholder="File's Description" [value]="file.description" #description></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-block">
+                        Update
+                    </button>
+                    <button class="btn btn-danger btn-block" (click)="deleteFile(file._id)">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</ng-template>

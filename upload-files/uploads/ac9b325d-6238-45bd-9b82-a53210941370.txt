@@ -1,0 +1,11 @@
+iniciamos un proyecto node con npm init -y
+instalamos typescript con npm i typescript-D
+instalamos npx tsc para poder configurar typescript
+instalamos express y @types/express
+iniciamos mongod 
+instalamos mongoose
+npm i multer
+npm i @types/multer
+instalamos npm i uuid para generar id
+
+primero correr mongod luego run dev
