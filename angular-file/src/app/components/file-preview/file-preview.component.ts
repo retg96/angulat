@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FileService} from '../../services/file.service';
-//import {File} from '../../interfaces/File';
+import {Archivo} from '../../interfaces/File';
 
 
 @Component({
@@ -12,7 +12,9 @@ import {FileService} from '../../services/file.service';
 export class FilePreviewComponent implements OnInit {
 
   id: string;
-  file: File;
+  // file:Archivo;
+  file:Blob;
+
 
   constructor(
     private activateRoute: ActivatedRoute,

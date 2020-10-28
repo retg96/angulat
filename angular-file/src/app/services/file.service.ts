@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import {Archivo} from '../interfaces/File'
 
-//import {File} from '../interfaces/File'
 
 
 @Injectable({
@@ -14,12 +14,12 @@ export class FileService {
 
   constructor(private http: HttpClient) { }
 
-  createFile(title: string, description:string, nombre:string, file:File){
+  createFile(title: string, description:string, nombre:string, archivo:Blob){
     const fd = new FormData();
     fd.append('title', title);
     fd.append('description', description);
     fd.append('nombre', nombre);
-    fd.append('archivo',file);
+    fd.append('archivo',archivo);
     return this.http.post(this.URI, fd);
   }
 
@@ -34,6 +34,10 @@ export class FileService {
   deleteFile(id: string) {
     return this.http.delete(`${this.URI}/${id}`);
   }
+
+  /*updateFile(id: string, title: string, nombre:string, description: string) {
+    return this.http.put(`${this.URI}/${id}`, {title, nombre, description});
+  }*/
 
   updateFile(id: string, title: string, nombre:string, description: string) {
     return this.http.put(`${this.URI}/${id}`, {title, nombre, description});

@@ -15,7 +15,8 @@ interface HtmlInputEvent extends Event {
 export class FileFormComponent implements OnInit {
 
   //crear la propiedad tipo file
-  file:File;
+  file:Blob;
+  // file:Archivo;
   fileSelected: string | ArrayBuffer;
 
 
